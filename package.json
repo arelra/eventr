@@ -1,0 +1,25 @@
+{
+  "name": "eventr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "neutrino build",
+    "start": "neutrino start",
+    "lint": "neutrino lint",
+    "test": "neutrino test"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.3",
+    "styled-components": "^3.3.3"
+  },
+  "devDependencies": {
+    "@neutrinojs/airbnb": "^8.2.3",
+    "@neutrinojs/jest": "^8.2.3",
+    "@neutrinojs/react": "^8.2.3",
+    "neutrino": "^8.2.3"
+  }
+}
