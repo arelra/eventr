@@ -1,8 +1,9 @@
 // TODO
-// add listeners to all events on listenting component
-// HOC for register handlers and attach
+// add listeners to all events on listening component
+// pass event to handlers
 // ui test for unregister and detach
 // groups
+// readme
 // rxjs to handle selection event
 // fire selection start and end event
 
@@ -49,21 +50,18 @@ const eventRegistrySingleton = (function () { // eslint-disable-line func-names
       fireClickOutsides(targetId, eventMap);
     };
     return {
-      register: (id, eventType, handler) =>
-        addEventHandler(id, eventType, handler),
-      unregister: (id, eventType) =>
-        removeHandler(id, eventType, eventMap),
-      attach: subscriberRef =>
-        (subscriberRef.addEventListener('click', handleEvent)),
-      detach: subscriberRef =>
-        (subscriberRef.removeEventListener('click', handleEvent)),
+      register: (id, eventType, handler) => addEventHandler(id, eventType, handler),
+      unregister: (id, eventType) => removeHandler(id, eventType, eventMap),
+      attach: subscriberRef => (subscriberRef.addEventListener('click', handleEvent)),
+      detach: subscriberRef => (subscriberRef.removeEventListener('click', handleEvent)),
+      log: () => console.log(eventMap), // eslint-disable-line no-console
     };
   };
   return {
     getInstance: () => {
       if (!instance) {
-        window.eventr = instance;
         instance = init();
+        window.eventr = instance;
       }
       return instance;
     },

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Text from './Text';
 import Circles from './Circles';
 import Squares from './Squares';
-import withEventsListener from '../lib/withEventsListener';
+import withEventListener from '../lib/withEventListener';
 
 const StyledPage = styled.div`
   width: 50%;
@@ -18,4 +18,4 @@ const Page = () => (
   </StyledPage>
 );
 
-export default withEventsListener(Page);
+export default withEventListener(Page);

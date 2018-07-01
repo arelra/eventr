@@ -2,7 +2,7 @@ import Circle from './Circle';
 import { arrayOf, getRandomInt, randomColor } from '../utils/util';
 
 export default () =>
-  arrayOf(20).map(() => {
+  arrayOf(2).map(() => {
     const id = getRandomInt(1, 10000);
     return (<Circle
       id={id}

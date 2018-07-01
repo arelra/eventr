@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import eventRegistry from '../lib/eventRegistry';
 
-const withEventsListener = WrappedComponent => class extends Component {
+const withEventListener = WrappedComponent => class extends Component {
   constructor(props) {
     super(props);
     this.eventRegistryInstance = eventRegistry.getInstance();
@@ -23,4 +23,4 @@ const withEventsListener = WrappedComponent => class extends Component {
   }
 };
 
-export default withEventsListener;
+export default withEventListener;
