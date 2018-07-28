@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import withEventHandlers from '../lib/withEventHandlers';
+import withEventHandlers from '../lib/hoc/withEventHandlers';
 
 const StyledCircle = styled.div`
   top: ${props => (props.y)}px;
