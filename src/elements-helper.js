@@ -1,5 +1,5 @@
 /**
- * Get all elements up the DOM tree until a matching parent is found
+ * Get all elements between element and the parent element
  * @param  {HTMLElement} childElement  Start element
  * @param  {HTMLElement} endParentElement End element
  * @return {HTMLElement[]} elements from target to matching parent

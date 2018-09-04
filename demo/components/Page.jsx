@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Text from './Text';
 import Circles from './Circles';
 import Squares from './Squares';
-import withEventListener from '../lib/hoc/withEventListener';
+import withEventListener from '../../src/hoc/withEventListener';
 
 const StyledPage = styled.div`
   width: 50%;
