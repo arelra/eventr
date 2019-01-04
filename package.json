@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "build:cjs": "mkdirp dist/cjs && babel src/ -d dist/cjs --copy-files --ignore '*.test.js'",
-    "build:esm": "mkdirp dist/esm && babel src/ -d dist/esm --copy-files --no-babelrc --presets=react --plugins=transform-object-rest-spread --ignore '*.test.js'"
+    "build:esm": "mkdirp dist/esm && babel src/ -d dist/esm --copy-files --no-babelrc --presets=react --plugins=transform-object-rest-spread --ignore '*.test.js'",
+    "test": "jest"
   },
   "dependencies": {
     "prop-types": "^15.6.2",
@@ -22,6 +23,10 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "babel-preset-react": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.5",
+    "jest": "^23.6.0"
   }
 }

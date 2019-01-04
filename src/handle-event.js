@@ -43,7 +43,11 @@ const handlerExistsForEvent = (el, event, eventMap) =>
  * @param {object} eventMap
  * @returns {object}
  */
-export const attemptHandlerInvocationForEvent = (event, listenerElement, eventMap) => {
+export const attemptHandlerInvocationForEvent = (
+  event,
+  listenerElement,
+  eventMap,
+) => {
   const elements = elementsBetween(event.target, listenerElement);
   const targetElementsFound = Boolean(elements.length);
   for (let i = 0; i < elements.length; i += 1) {
@@ -53,7 +57,10 @@ export const attemptHandlerInvocationForEvent = (event, listenerElement, eventMa
       return getState({ stoppedPropagation: true, targetElementsFound });
     }
 
-    if (handlerExistsForEvent(element, event, eventMap) && !isRightClick(event)) {
+    if (
+      handlerExistsForEvent(element, event, eventMap) &&
+      !isRightClick(event)
+    ) {
       invokeHandler(element, event, eventMap);
       invokeOutsideClickHandlers(event.target.id, eventMap);
       return getState({ invokedHandler: true, targetElementsFound });
@@ -93,7 +100,8 @@ export const handleEvent = (event, listenerElement, eventMap) => {
     targetElementsFound,
   } = attemptHandlerInvocationForEvent(event, listenerElement, eventMap);
 
-  const shouldClickOutside = targetElementsFound && !invokedHandler && !stoppedPropagation;
+  const shouldClickOutside =
+    targetElementsFound && !invokedHandler && !stoppedPropagation;
   if (shouldClickOutside) {
     invokeOutsideClickHandlers(event.target.id, eventMap);
     invokeCustomClickHandlers(event, eventMap);
